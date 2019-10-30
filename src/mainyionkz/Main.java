@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Main extends PApplet {
 
     ArrayList<Tower> towers = new ArrayList<>();
+    ArrayList<Blockz> blocks = new ArrayList<>();
 
     public void settings(){
         size(1000,500);
