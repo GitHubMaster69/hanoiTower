@@ -1,12 +1,20 @@
 package mainyionkz;
 
-import java.util.ArrayList;
+        import processing.core.PApplet;
+        import java.util.ArrayList;
 
-public class Tower {
-    public int towerNumber;
+public class Tower extends PApplet {
+    private int towerNumber;
+    protected final PApplet p;
 
-    Tower(int num){
+    Tower(int num, PApplet pa){
         towerNumber = num;
-        new ArrayList(8);
+        p = pa;
+        ArrayList<Blockz> blocks = new ArrayList<Blockz>();
+    }
+
+    void drawTower(){
+        p.fill(0);
+        p.rect(100+(100*towerNumber),100,40,25);
     }
 }

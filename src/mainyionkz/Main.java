@@ -2,14 +2,22 @@ package mainyionkz;
 
 import processing.core.PApplet;
 
+import java.util.ArrayList;
+
 public class Main extends PApplet {
 
-    public void setup(){
-        size(100,100);
-    }
+    ArrayList<Tower> towers = new ArrayList<>();
 
+    public void settings(){
+        size(1000,500);
+        createTowers();
+        println(towers.get(0));
+    }
+@Override
     public void draw(){
-        println("Gay");
+        background(100);
+        drawTowers();
+        //drawBlockz();
     }
 
 
@@ -24,7 +32,18 @@ public class Main extends PApplet {
         Main.main("mainyionkz.Main");
         }
 
+public void drawTowers(){
+        for(int i = 0; i < towers.size(); i++) {
+            Tower tower = towers.get(i);
+            tower.drawTower();
+        }
+}
 
+    public void createTowers(){
+        towers.add(new Tower(0,this));
+        towers.add(new Tower(1,this));
+        towers.add(new Tower(2,this));
+    }
 
 
 
