@@ -1,14 +1,19 @@
 package mainyionkz;
 
-public class Blockz {
-    private int blockNumber;
-    private int towerPos;
+import processing.core.PApplet;
 
-    Blockz(int num){
+public class Blockz extends PApplet {
+    public int blockNumber;
+    public int towerPos;
+    protected final PApplet p;
+
+    Blockz(int num, PApplet pa) {
         blockNumber = num;
-        towerPos = 0;
+        towerPos = 1;
+        p = pa;
     }
-}
-public void moveBlock(int blockNum, int tow2){
 
+    void drawBlock() {
+
+    }
 }

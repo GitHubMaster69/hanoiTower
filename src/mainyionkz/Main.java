@@ -12,6 +12,7 @@ public class Main extends PApplet {
     public void settings(){
         size(1000,500);
         createTowers();
+        createBlockz();
         println(towers.get(0));
     }
 @Override
@@ -24,22 +25,26 @@ public class Main extends PApplet {
     public void mousePressed() {
         beb();
     }
-    static void towerOfHanoi(int n, char from_rod, char to_rod, char mid_rod)
+    public void towerOfHanoi(int n, int from_tower, int to_tower, int mid_tower)
     {
         if (n == 1)
         {
-            System.out.println("Move disk 1 from rod " +  from_rod + " to rod " + to_rod);
+            System.out.println("Move disk 1 from tower " +  from_tower + " to tower " + to_tower);
             return;
         }
-        towerOfHanoi(n-1, from_rod, mid_rod, to_rod);
-        System.out.println("Move disk " + n + " from rod " +  from_rod + " to rod " + to_rod);
-        towerOfHanoi(n-1, mid_rod, to_rod, from_rod);
+        towerOfHanoi(n-1, from_tower, mid_tower, to_tower);
+        System.out.println("Move disk " + n + " from tower " +  from_tower + " to tower " + to_tower);
+        Blockz block = blocks.get(n-1);
+    block.towerPos = to_tower;
+        System.out.print("number " + n + "is at ");
+        System.out.println(block.towerPos);
+        towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
     }
 
-    public static void beb()
+    public void beb()
     {
         int n = 4;
-        towerOfHanoi(n, 'A', 'C', 'B');
+        towerOfHanoi(n, 0, 1, 2);
     }
 
     public static void main(String[] args){
@@ -57,6 +62,13 @@ public void drawTowers(){
         towers.add(new Tower(0,this));
         towers.add(new Tower(1,this));
         towers.add(new Tower(2,this));
+    }
+
+    public void createBlockz(){
+        blocks.add(new Blockz(0, this));
+        blocks.add(new Blockz(1, this));
+        blocks.add(new Blockz(2, this));
+        blocks.add(new Blockz(3, this));
     }
 
 
