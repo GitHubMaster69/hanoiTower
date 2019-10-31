@@ -27,16 +27,16 @@ public class Main extends PApplet {
     }
     public void towerOfHanoi(int n, int from_tower, int to_tower, int mid_tower)
     {
-        if (n == 1)
+        if (n == 0)
         {
-            System.out.println("Move disk 1 from tower " +  from_tower + " to tower " + to_tower);
+            System.out.println("Move disc 1 from tower " +  from_tower + " to tower " + to_tower);
             return;
         }
         towerOfHanoi(n-1, from_tower, mid_tower, to_tower);
-        System.out.println("Move disk " + n + " from tower " +  from_tower + " to tower " + to_tower);
+        System.out.println("Move disc " + n + " from tower " +  from_tower + " to tower " + to_tower);
         Blockz block = blocks.get(n-1);
     block.towerPos = to_tower;
-        System.out.print("number " + n + " is at ");
+        System.out.print("Disc " + n + " is at ");
         System.out.println(block.towerPos);
         towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
     }
@@ -44,7 +44,7 @@ public class Main extends PApplet {
     public void beb()
     {
         int n = 4;
-        towerOfHanoi(n, 0, 1, 2);
+        towerOfHanoi(n, 0, 2, 1);
     }
 
     public static void main(String[] args){
