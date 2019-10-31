@@ -37,7 +37,7 @@ public class Main extends PApplet {
         System.out.println("Disc " + n + " from tower " +  from_tower + " to tower " + to_tower);
         Blockz block = blocks.get(n-1);
     block.towerPos = to_tower;
-        System.out.print("Disc " + n + " is at ");
+        System.out.print("Disc " + n + " is at tower");
         System.out.println(block.towerPos);
         towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
     }
