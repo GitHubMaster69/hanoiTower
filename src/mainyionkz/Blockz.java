@@ -13,9 +13,10 @@ public class Blockz extends PApplet {
         p = pa;
     }
 
-    void drawBlocks() {
+    void drawBlocks(int difficulty) {
         //colorMode(HSB,100);
+        p.rectMode(CENTER);
         p.fill(105 -(blockNumber * 10));
-        p.rect(100 + (100 * towerPos) + (blockNumber * 5),90 - (blockNumber * 10),40 - (blockNumber * 10),10);
+        p.rect(100 + (150 * towerPos),190 - (blockNumber * 10),(difficulty*10) - (blockNumber * 10),10);
     }
 }

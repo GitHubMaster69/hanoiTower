@@ -3,17 +3,16 @@ package mainyionkz;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
-
 public class Main extends PApplet {
 
     ArrayList<Tower> towers = new ArrayList<>();
     ArrayList<Blockz> blocks = new ArrayList<>();
+    public int difficulty = 10;
 
     public void settings(){
         size(1000,500);
         createTowers();
         createBlockz();
-        println(towers.get(0));
     }
 @Override
     public void draw(){
@@ -23,28 +22,24 @@ public class Main extends PApplet {
     }
 
     public void mousePressed() {
-        beb();
+        int n = difficulty;
+        towerOfHanoi(n, 0, 2, 1);
     }
+
     public void towerOfHanoi(int n, int from_tower, int to_tower, int mid_tower)
     {
         if (n == 0)
         {
-            System.out.println("Move disc 1 from tower " +  from_tower + " to tower " + to_tower);
+            System.out.println("Disc 1 from tower " +  from_tower + " to tower " + to_tower);
             return;
         }
         towerOfHanoi(n-1, from_tower, mid_tower, to_tower);
-        System.out.println("Move disc " + n + " from tower " +  from_tower + " to tower " + to_tower);
+        System.out.println("Disc " + n + " from tower " +  from_tower + " to tower " + to_tower);
         Blockz block = blocks.get(n-1);
     block.towerPos = to_tower;
         System.out.print("Disc " + n + " is at ");
         System.out.println(block.towerPos);
         towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
-    }
-
-    public void beb()
-    {
-        int n = 4;
-        towerOfHanoi(n, 0, 2, 1);
     }
 
     public static void main(String[] args){
@@ -61,7 +56,7 @@ public void drawTowers(){
 public void drawBlocks(){
         for(int i = 0; i < blocks.size(); i++) {
             Blockz block = blocks.get(i);
-            block.drawBlocks();
+            block.drawBlocks(difficulty);
         }
     }
 
@@ -72,12 +67,10 @@ public void drawBlocks(){
     }
 
     public void createBlockz(){
-        blocks.add(new Blockz(0, this));
-        blocks.add(new Blockz(1, this));
-        blocks.add(new Blockz(2, this));
-        blocks.add(new Blockz(3, this));
+        for (int i = 0; i < difficulty; i++){
+             blocks.add(new Blockz(i,this));
+        }
     }
-
 
 
 

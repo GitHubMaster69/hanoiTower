@@ -2,22 +2,16 @@ package mainyionkz;
 
 public class Rekursiv {
 
-        static void towerOfHanoi(int n, char from_rod, char to_rod, char mid_rod)
+        static void towerOfHanoi(int n, char from_tower, char to_tower, char mid_tower)
         {
             if (n == 1)
             {
-                System.out.println("Move disk 1 from rod " +  from_rod + " to rod " + to_rod);
+                System.out.println("Disc 1 from tower " +  from_tower + " to tower " + to_tower);
                 return;
             }
-            towerOfHanoi(n-1, from_rod, mid_rod, to_rod);
-            System.out.println("Move disk " + n + " from rod " +  from_rod + " to rod " + to_rod);
-            towerOfHanoi(n-1, mid_rod, to_rod, from_rod);
-        }
-
-        public static void beb()
-        {
-            int n = 4;
-            towerOfHanoi(n, 'A', 'C', 'B');
+            towerOfHanoi(n-1, from_tower, mid_tower, to_tower);
+            System.out.println("Disc " + n + " from tower " +  from_tower + " to tower " + to_tower);
+            towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
         }
     }
 
