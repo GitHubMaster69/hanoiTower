@@ -9,11 +9,13 @@ public class Blockz extends PApplet {
 
     Blockz(int num, PApplet pa) {
         blockNumber = num;
-        towerPos = 1;
+        towerPos = 0;
         p = pa;
     }
 
-    void drawBlock() {
-
+    void drawBlocks() {
+        //colorMode(HSB,100);
+        p.fill(105 -(blockNumber * 10));
+        p.rect(100 + (100 * towerPos) + (blockNumber * 5),90 - (blockNumber * 10),40 - (blockNumber * 10),10);
     }
 }

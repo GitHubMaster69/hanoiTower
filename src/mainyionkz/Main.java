@@ -19,7 +19,7 @@ public class Main extends PApplet {
     public void draw(){
         background(100);
         drawTowers();
-        //drawBlockz();
+        drawBlocks();
     }
 
     public void mousePressed() {
@@ -36,7 +36,7 @@ public class Main extends PApplet {
         System.out.println("Move disk " + n + " from tower " +  from_tower + " to tower " + to_tower);
         Blockz block = blocks.get(n-1);
     block.towerPos = to_tower;
-        System.out.print("number " + n + "is at ");
+        System.out.print("number " + n + " is at ");
         System.out.println(block.towerPos);
         towerOfHanoi(n-1, mid_tower, to_tower, from_tower);
     }
@@ -57,6 +57,13 @@ public void drawTowers(){
             tower.drawTower();
         }
 }
+
+public void drawBlocks(){
+        for(int i = 0; i < blocks.size(); i++) {
+            Blockz block = blocks.get(i);
+            block.drawBlocks();
+        }
+    }
 
     public void createTowers(){
         towers.add(new Tower(0,this));

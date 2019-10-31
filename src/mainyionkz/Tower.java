@@ -10,7 +10,7 @@ public class Tower extends PApplet {
     Tower(int num, PApplet pa){
         towerNumber = num;
         p = pa;
-        ArrayList<Blockz> blocks = new ArrayList<Blockz>();
+        ArrayList<Blockz> towerBlocks = new ArrayList<Blockz>();
     }
 
     void drawTower(){
