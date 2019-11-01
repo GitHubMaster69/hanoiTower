@@ -3,9 +3,9 @@ package mainyionkz;
 import processing.core.PApplet;
 
 public class Blockz extends PApplet {
-    public int blockNumber;
-    public int towerPos;
-    protected final PApplet p;
+    int blockNumber;
+    int towerPos;
+    private final PApplet p;
 
     Blockz(int num, int position, PApplet pa) {
         blockNumber = num;

@@ -4,7 +4,7 @@ package mainyionkz;
 
 public class Tower extends PApplet {
     private int towerNumber;
-    protected final PApplet p;
+    private final PApplet p;
 
     Tower(int num, PApplet pa){
         towerNumber = num;
