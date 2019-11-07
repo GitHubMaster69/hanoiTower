@@ -8,7 +8,7 @@ public class Main extends PApplet {
     private ArrayList<Tower> towers = new ArrayList<>();
     private ArrayList<Blockz> blocks = new ArrayList<>();
     private ArrayList<Move> moves = new ArrayList<>();
-    private int discs = 20;
+    private int discs = 10;
     private int replayProgress = 0;
     private boolean replaying = false;
     protected final PApplet p = this;
